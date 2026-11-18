@@ -25,8 +25,9 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
+  <div id="top" aria-hidden="true"></div>
   <a class="skip-link" href="#main">本文へスキップ</a>
-  <header class="site-header" id="top">
+  <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="BANNER 70 トップへ">
         <img src="assets/logo/logo.png" width="1280" height="248" alt="BANNER 70">
@@ -73,7 +74,7 @@
         <div class="figma-note hero-figma-note">
           <img class="figma-symbol" src="assets/Figma-logo.svg.webp" width="22" height="33" alt="">
           <div class="hero-figma-copy">
-            <div class="hero-figma-heading"><strong>Figma無料プランでも基本編集OK</strong><a class="figma-link" href="https://www.figma.com/ja-jp/design/" target="_blank" rel="noopener noreferrer">Figmaはこちら <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5M19 5l-9 9M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">（外部サイトを新しいタブで開く）</span></a></div>
+            <div class="hero-figma-heading"><strong>Figmaで文字・写真自由にカスタマイズ！</strong><a class="figma-link" href="https://www.figma.com/ja-jp/design/" target="_blank" rel="noopener noreferrer">Figmaはこちら <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5M19 5l-9 9M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">（外部サイトを新しいタブで開く）</span></a></div>
             <small>PCブラウザ・デスクトップアプリで利用可能</small>
           </div>
         </div>
@@ -90,7 +91,7 @@
             <img class="hero-tile tile-h" src="assets/banner-template/banner-template_sample_8.jpg" width="512" height="512" alt="収録バナー例：セール告知" loading="lazy">
             <img class="hero-tile tile-i" src="assets/banner-template/banner-template_sample_37.jpg" width="512" height="512" alt="収録バナー例：キャンペーン" loading="lazy">
           </div>
-          <div class="hero-sticker" aria-hidden="true"><strong>70</strong><span>DESIGN<br>テンプレート</span></div>
+          <div class="hero-sticker" aria-hidden="true"><strong>70</strong><span class="hero-sticker-design">DESIGN</span><span class="hero-sticker-template">テンプレート</span><span class="hero-sticker-figma">Figmaで編集OK</span></div>
         </div>
       </div>
     </section>
@@ -166,26 +167,39 @@
 
     <section class="section section-howto" id="howto" aria-labelledby="howto-title">
       <div class="container">
-        <div class="section-heading section-heading-split reveal"><div><span class="section-index"><i>05</i> EDIT IN FIGMA</span><h2 id="howto-title">編集は、思ったより<br><span class="accent-text">ずっとシンプル。</span></h2></div><p class="section-lead">Figmaはブラウザでも使えるデザインツール。<br>基本的な文字・写真の変更は無料プランから始められます。</p></div>
+        <div class="section-heading section-heading-split reveal"><div><span class="section-index"><i>05</i> EDIT IN FIGMA</span><h2 id="howto-title">編集は、思ったより<br><span class="accent-text">ずっとシンプル。</span></h2></div><p class="section-lead">Figmaはブラウザでも使えるデザインツール。<br>無料プランで文字・写真を編集し、画像を書き出せます。</p></div>
         <div class="howto-layout">
           <div class="video-wrap reveal">
             <div class="video-screen"><video id="demoVideo" controls muted loop preload="none" playsinline poster="assets/video-poster.jpg" width="1920" height="1080" aria-label="Figmaでのバナー編集デモ動画"><source src="assets/movie/movie.mp4" type="video/mp4">お使いのブラウザでは動画を再生できません。</video></div>
             <div class="video-meta"><span><span class="video-meta-dot"></span> ACTUAL FIGMA EDITING</span><span class="video-meta-actions"><button class="video-mute-toggle" id="demoMuteToggle" type="button" aria-controls="demoVideo" aria-pressed="false">音をオンにする</button><span>DEMO MOVIE / 約42秒</span></span></div>
           </div>
-          <div class="steps reveal reveal-children"><div class="step"><div class="step-no">01</div><div><h3>使いたいデザインを選ぶ</h3><p>70種類の中から、伝えたい内容に近いバナーを選択。</p></div></div><div class="step"><div class="step-no">02</div><div><h3>文字や写真を差し替える</h3><p>キャッチコピー、価格、商品画像などを自由に変更。</p></div></div><div class="step"><div class="step-no">03</div><div><h3>画像を書き出して使う</h3><p>PNG・JPGなどで書き出して、広告やSNSへ。</p></div></div><div class="figma-note"><img class="figma-symbol" src="assets/Figma-logo.svg.webp" width="22" height="33" alt="" loading="lazy" decoding="async"><p><strong>Figma無料プランでも基本編集OK</strong><small>PCブラウザ・デスクトップアプリで利用可能</small><a class="figma-link" href="https://www.figma.com/ja-jp/design/" target="_blank" rel="noopener noreferrer">Figmaはこちら <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5M19 5l-9 9M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">（外部サイトを新しいタブで開く）</span></a></p></div></div>
+          <div class="steps reveal reveal-children"><div class="step"><div class="step-no">01</div><div><h3>使いたいデザインを選ぶ</h3><p>70種類の中から、伝えたい内容に近いバナーを選択。</p></div></div><div class="step"><div class="step-no">02</div><div><h3>文字や写真を差し替える</h3><p>キャッチコピー、価格、商品画像などを自由に変更。</p></div></div><div class="step"><div class="step-no">03</div><div><h3>画像を書き出して使う</h3><p>PNG・JPGなどで書き出して、広告やSNSへ。</p></div></div><div class="figma-note"><img class="figma-symbol" src="assets/Figma-logo.svg.webp" width="22" height="33" alt="" loading="lazy" decoding="async"><p><strong>Figma無料プランで文字・写真を編集、画像も書き出せます</strong><small>PCブラウザ・デスクトップアプリで利用可能</small><a class="figma-link" href="https://www.figma.com/ja-jp/design/" target="_blank" rel="noopener noreferrer">Figmaはこちら <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5M19 5l-9 9M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">（外部サイトを新しいタブで開く）</span></a></p></div></div>
         </div>
       </div>
     </section>
 
     <section class="section section-benefits" aria-labelledby="benefits-title">
-      <div class="container"><div class="section-heading section-heading-split reveal"><div><span class="section-index"><i>06</i> WHY BANNER 70</span><h2 id="benefits-title">買い切りだから、<br>使うほど頼もしい。</h2></div><p class="section-lead">バナー制作を、都度発生する作業から、<br>いつでも取り出せるデザイン資産へ。</p></div>
+      <div class="container"><div class="section-heading section-heading-split illustrated-heading reveal"><div><span class="section-index"><i>06</i> WHY BANNER 70</span><h2 id="benefits-title">買い切りだから、<br>使うほど頼もしい。</h2></div><div class="illustrated-heading-side"><img class="illustrated-heading-image" src="assets/why_01.webp" width="1280" height="720" alt="" loading="lazy" decoding="async"></div></div>
         <div class="benefits-grid"><div class="benefit reveal"><span class="benefit-icon">70</span><h3>70種類を収録</h3><p>商品・サービス・キャンペーンなど、幅広い見せ方の起点になるデザイン。</p></div><div class="benefit reveal"><span class="benefit-icon">∞</span><h3>複製・編集は繰り返し</h3><p>一度きりでは終わらない。訴求が変わっても、同じデザインを活用できます。</p></div><div class="benefit reveal"><span class="benefit-icon">↗</span><h3>商用利用に対応</h3><p>自社の広告・SNSや、許諾範囲内の受託制作にも使用できます。</p></div><div class="benefit reveal"><span class="benefit-icon">¥0</span><h3>追加の月額費用なし</h3><p>テンプレートは買い切り。継続的な商品利用料金は発生しません。</p></div></div>
       </div>
     </section>
 
     <section class="section section-audience" aria-labelledby="audience-title">
-      <div class="container"><div class="section-heading reveal"><span class="section-index"><i>07</i> FOR YOUR WORK</span><h2 id="audience-title">こんな仕事に、<br>こんな人に。</h2></div>
-        <div class="audience-list"><article class="audience-item reveal"><span class="audience-num">01</span><div><h3>自社の広告・マーケティング担当者</h3><p>新しいクリエイティブを次々に用意したい。社内ですぐに編集できるストックを持ちたい。</p></div><span class="audience-arrow" aria-hidden="true">↗</span></article><article class="audience-item reveal"><span class="audience-num">02</span><div><h3>広告運用代行・マーケティング支援事業者</h3><p>専任のデザイナーがいなくても、クオリティの高いデザインを起点に提案・制作したい。</p></div><span class="audience-arrow" aria-hidden="true">↗</span></article><article class="audience-item reveal"><span class="audience-num">03</span><div><h3>SNS・ECの運用担当者</h3><p>新商品の告知やセール、日々の投稿画像を、効率的に制作したい。</p></div><span class="audience-arrow" aria-hidden="true">↗</span></article></div>
+      <div class="container"><div class="section-heading section-heading-split illustrated-heading reveal"><div><span class="section-index"><i>07</i> FOR YOUR WORK</span><h2 id="audience-title">こんな仕事に、<br>こんな人に。</h2></div><div class="illustrated-heading-side"><img class="illustrated-heading-image" src="assets/for-your-work_01.webp" width="1223" height="693" alt="" loading="lazy" decoding="async"></div></div>
+        <div class="audience-list">
+          <details class="audience-item reveal">
+            <summary class="audience-trigger"><span class="audience-num">01</span><span class="audience-summary-copy"><span class="audience-title">自社の広告・マーケティング担当者</span><span class="audience-teaser">新しいクリエイティブを次々に用意したい。社内ですぐに編集できるストックを持ちたい。</span></span><svg class="audience-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 7 7 7-7"/></svg></summary>
+            <div class="audience-panel"><p><strong>課題</strong>キャンペーンや広告の検証で複数の画像が必要でも、毎回制作を依頼すると公開までの時間と費用がかさみます。</p><p><strong>BANNER 70なら</strong>訴求に近いデザインを70種類から選び、Figmaで文字や写真を差し替えて複数案を制作。社内で更新し、次の施策にも再利用できます。</p></div>
+          </details>
+          <details class="audience-item reveal">
+            <summary class="audience-trigger"><span class="audience-num">02</span><span class="audience-summary-copy"><span class="audience-title">広告運用代行・マーケティング支援事業者</span><span class="audience-teaser">専任のデザイナーがいなくても、クオリティの高いデザインを起点に提案・制作したい。</span></span><svg class="audience-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 7 7 7-7"/></svg></summary>
+            <div class="audience-panel"><p><strong>課題</strong>案件ごとに業種や訴求が異なる一方、専任デザイナーを確保できず、提案と制作の両方が滞りがちです。</p><p><strong>BANNER 70なら</strong>用途に合う構図を出発点に、クライアントの内容へ編集。制作の初動を早め、商品ライセンスの範囲で受託案件にも活用できます。</p></div>
+          </details>
+          <details class="audience-item reveal">
+            <summary class="audience-trigger"><span class="audience-num">03</span><span class="audience-summary-copy"><span class="audience-title">SNS・ECの運用担当者</span><span class="audience-teaser">新商品の告知やセール、日々の投稿画像を、効率的に制作したい。</span></span><svg class="audience-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 7 7 7-7"/></svg></summary>
+            <div class="audience-panel"><p><strong>課題</strong>新商品やセール、日々の投稿など更新が多く、正方形画像を毎回ゼロから作る時間が取りにくい。</p><p><strong>BANNER 70なら</strong>テンプレートを複製し、写真・価格・コピーを入れ替えて展開。投稿や告知の見た目を揃えながら、制作を進められます。</p></div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -195,8 +209,8 @@
         <div class="price-intro reveal"><span class="section-index section-index-light"><i>08</i> THE PRICE</span><h2 id="price-title">バナー5枚分の予算で、<br><span>70種類のデザインを。</span></h2><p>例えば、1枚10,000円でバナーを個別制作してもらう場合。<br>5枚なら50,000円。BANNER 70なら、70種類の編集可能なテンプレートを買い切りで。</p></div>
         <div class="price-box reveal">
           <div class="price-box-top"><div><span class="launch-label"><span class="launch-dot"></span> LAUNCH SPECIAL PRICE</span><h3>BANNER 70 <span>FULL COLLECTION</span></h3></div><div class="price-mark">70<span>DESIGNS</span></div></div>
-          <div class="price-middle"><div class="price-context">発売記念特別価格 <span>／ 税込・買い切り</span></div><div class="price-total"><span>¥</span>49,900</div><p>1種類あたり <strong>約713円</strong> ／ 追加の月額利用料なし</p></div>
-          <div class="price-box-bottom"><ul class="included-list reveal-children"><li>正方形バナーテンプレート 70種類</li><li>Figmaで文字・写真を編集可能</li><li>複製して繰り返し利用可能</li><li>商用利用可能（商品ライセンスに準拠）</li></ul><div class="purchase-action"><p class="purchase-delivery-note" id="purchaseDeliveryNote" hidden>購入後すぐにダウンロードリンクを送付いたします。</p><a class="button button-purchase" href="https://anyaku.co.jp/contact/" data-checkout data-checkout-label="49,900円で購入する" data-inquiry-label="購入について問い合わせる">購入について問い合わせる <span aria-hidden="true">↗</span></a><small id="checkoutStatus">決済ページ設定前のため、ANYAKUのお問い合わせフォームへ移動します。</small></div></div>
+          <div class="price-middle"><div class="price-context">発売記念特別価格 <span>／ 税込・買い切り</span></div><div class="price-total"><span>¥</span>49,900</div><p>1種類あたり <strong>約713円</strong> ／ 追加の月額利用料なし</p><p class="price-future">キャンペーン終了後の販売予定価格 <span>¥99,800</span></p></div>
+          <div class="price-box-bottom"><ul class="included-list reveal-children"><li>正方形バナーテンプレート 70種類</li><li>Figmaで文字・写真を編集可能</li><li>複製して繰り返し利用可能</li><li>商用利用可能（商品ライセンスに準拠）</li></ul><div class="purchase-action"><p class="purchase-delivery-note" id="purchaseDeliveryNote" hidden>購入後すぐにダウンロードリンクが自動送信されます。</p><a class="button button-purchase" href="https://anyaku.co.jp/contact/" data-checkout data-checkout-label="49,900円で購入する" data-inquiry-label="購入について問い合わせる">購入について問い合わせる <span aria-hidden="true">↗</span></a><small id="checkoutStatus">決済ページ設定前のため、ANYAKUのお問い合わせフォームへ移動します。</small><a class="purchase-policy-link" href="refund-policy.html">返品・キャンセル・返金について <span aria-hidden="true">→</span></a><a class="purchase-policy-link" href="legal.html">特定商取引法に基づく表記 <span aria-hidden="true">→</span></a></div></div>
         </div>
         <p class="price-caveat">※ 個別制作1枚10,000円は比較のための参考例です。オーダーメイドの個別制作と本商品のテンプレートでは提供内容が異なります。70万円相当の価値を保証する表示ではありません。</p>
       </div>
@@ -204,18 +218,19 @@
 
     <section class="section section-faq" id="faq" aria-labelledby="faq-title"><div class="container faq-layout"><div class="reveal"><span class="section-index"><i>09</i> FAQ</span><h2 id="faq-title">よくあるご質問。</h2><p class="faq-intro">購入前に気になることをまとめました。</p></div><div class="faq-list reveal reveal-children">
       <details><summary>Figmaを使ったことがなくても大丈夫ですか？ <span class="faq-toggle" aria-hidden="true"></span></summary><p>Figmaの基本操作は必要ですが、まずは文字の打ち替えや写真の差し替えからお使いいただけます。ページ内のデモ動画でも操作のイメージをご確認いただけます。</p></details>
-      <details><summary>無料のFigmaでも利用できますか？ <span class="faq-toggle" aria-hidden="true"></span></summary><p>はい。Figmaの無料プランでも、ファイルの複製やテキスト・画像の基本編集が可能です。一部の機能やフォントは環境・プランによって利用条件が異なります。</p></details>
+      <details><summary>無料のFigmaでも利用できますか？ <span class="faq-toggle" aria-hidden="true"></span></summary><p>はい。Figmaの無料プランでファイルを複製し、文字や写真を編集して、PNG・JPGなどの画像として書き出せます。一部の機能やフォントは環境・プランによって利用条件が異なります。</p></details>
       <details><summary>収録されているサイズは何種類ですか？ <span class="faq-toggle" aria-hidden="true"></span></summary><p>正方形のバナー70種類です。横長や縦長サイズのテンプレートは含まれていません。編集によるサイズ調整は可能ですが、別サイズに最適化されたデザインは収録されていません。</p></details>
       <details><summary>写真や文字は自由に変更できますか？ <span class="faq-toggle" aria-hidden="true"></span></summary><p>はい。Figma上でテキストを変更し、背景画像や商品写真をご自身で用意した素材に差し替えることができます。素材を追加する際は、ご自身で適切な利用許諾をご確認ください。</p></details>
       <details><summary>商用利用・受託案件での利用はできますか？ <span class="faq-toggle" aria-hidden="true"></span></summary><p>商品の利用規約の範囲で商用利用が可能です。完成したバナーを広告やSNSなどに利用できます。受託案件での使用・納品範囲、複数担当者での共有については販売時のライセンスをご確認ください。テンプレートの再販売・再配布は禁止です。</p></details>
       <details><summary>AI生成素材は含まれていますか？ <span class="faq-toggle" aria-hidden="true"></span></summary><p>一部の背景画像等にAI生成素材を使用しています。デザインの構図・文字組み・レイアウトはデザイナーが制作しています。著作権上のリスクが一切ないことを保証する商品ではありません。</p></details>
       <details><summary>購入後に毎月料金は発生しますか？ <span class="faq-toggle" aria-hidden="true"></span></summary><p>いいえ。BANNER 70のテンプレート利用料は買い切りです。Figma側の有料機能を使用する場合や、追加の写真素材を購入する場合は、別途費用が発生することがあります。</p></details>
+      <details><summary>返品・返金について <span class="faq-toggle" aria-hidden="true"></span></summary><p>本商品はデジタルコンテンツのため、商品データ提供後のお客様都合によるキャンセル・返品・返金は原則としてお受けしておりません。</p><p>商品データの不備や未提供など、当社の責任による問題が発生した場合は、修正・再提供または返金等にて対応いたします。</p><p>ご購入前に収録内容・利用規約・返品返金ポリシーをご確認ください。</p><p><a href="refund-policy.html">返品・キャンセル・返金についての詳細 <span aria-hidden="true">→</span></a></p></details>
     </div></div></section>
 
     <section class="final-cta" aria-labelledby="final-title"><div class="container final-inner"><div class="final-text reveal"><span class="section-index section-index-light">YOUR NEXT CREATIVE STARTS HERE</span><h2 id="final-title">次のバナー制作を、<br>もっと自由に。</h2><p>70種類のプロデザインを、あなたの手元に。<br>必要なときに、必要なだけ。何度でも。</p><a class="button button-white" href="https://anyaku.co.jp/contact/" data-checkout data-checkout-label="BANNER 70を購入する" data-inquiry-label="購入について問い合わせる">購入について問い合わせる <span aria-hidden="true">↗</span></a><small>発売記念特別価格 49,900円（税込）／買い切り</small></div><div class="final-art reveal reveal-stack" aria-hidden="true"><img src="assets/banner-template/banner-template_sample_2.jpg" alt="" loading="lazy"><img src="assets/banner-template/banner-template_sample_65.jpg" alt="" loading="lazy"><img src="assets/banner-template/banner-template_sample_57.jpg" alt="" loading="lazy"><img src="assets/banner-template/banner-template_sample_13.jpg" alt="" loading="lazy"><span class="final-star">✳</span></div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><div><img class="footer-logo" src="assets/logo/logo.png" alt="BANNER 70" width="1280" height="248"><p>プロのデザインを、もっと身近に。<br>株式会社ANYAKUによるデザインテンプレートコレクション。</p></div><div class="footer-links"><a href="#collection">収録デザイン</a><a href="#customize">Before / After</a><a href="#faq">よくあるご質問</a><a href="https://anyaku.co.jp/" target="_blank" rel="noopener noreferrer">ANYAKU公式サイト ↗</a><a href="https://anyaku.co.jp/contact/" target="_blank" rel="noopener noreferrer">お問い合わせ ↗</a></div></div><div class="container footer-bottom"><small>* 商用利用は別途定める利用規約の範囲内です。一部の背景画像等にAI生成素材が含まれます。</small><small>© 2026 ANYAKU Co., Ltd. All Rights Reserved.</small></div></footer>
+  <footer class="site-footer"><div class="container footer-inner"><div><img class="footer-logo" src="assets/logo/logo.png" alt="BANNER 70" width="1280" height="248"><p>プロのデザインを、もっと身近に。<br>株式会社ANYAKUによるデザインテンプレートコレクション。</p></div><div class="footer-links"><a href="#collection">収録デザイン</a><a href="#customize">Before / After</a><a href="#faq">よくあるご質問</a><a href="refund-policy.html">返品・キャンセル・返金について</a><a href="legal.html">特定商取引法に基づく表記</a><a href="https://anyaku.co.jp/" target="_blank" rel="noopener noreferrer">ANYAKU公式サイト ↗</a><a href="https://anyaku.co.jp/contact/" target="_blank" rel="noopener noreferrer">お問い合わせ ↗</a></div></div><div class="container footer-bottom"><small>* 商用利用は別途定める利用規約の範囲内です。一部の背景画像等にAI生成素材が含まれます。</small><small>© 2026 ANYAKU Co., Ltd. All Rights Reserved.</small></div></footer>
 
   <dialog class="gallery-dialog" id="galleryDialog" aria-label="バナーデザイン拡大表示"><div class="dialog-header"><span id="dialogCount">BANNER 01 / 70</span><button type="button" class="dialog-close" id="dialogClose" aria-label="閉じる">×</button></div><div class="dialog-body"><button type="button" class="dialog-prev" id="dialogPrev" aria-label="前の画像">‹</button><img id="dialogImage" src="assets/banner-template/banner-template_sample_1.jpg" alt="拡大表示したバナーデザイン" width="512" height="512"><button type="button" class="dialog-next" id="dialogNext" aria-label="次の画像">›</button></div><p>収録テンプレートのイメージ画像です。左右の矢印キーでも切り替えられます。</p></dialog>
   <button class="back-to-top" id="backToTop" type="button" aria-label="ページの先頭に戻る">↑</button>

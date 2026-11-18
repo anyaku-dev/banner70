@@ -17,7 +17,54 @@
   if (checkoutStatus && checkoutUrl) checkoutStatus.textContent = '外部の決済ページに移動します。ご購入前に利用条件をご確認ください。';
   const purchaseDeliveryNote = document.getElementById('purchaseDeliveryNote');
   if (purchaseDeliveryNote) purchaseDeliveryNote.hidden = !checkoutUrl;
+  if (checkoutUrl) {
+    let checkoutOrigin = '';
+    try { checkoutOrigin = new URL(checkoutUrl).origin; } catch { /* Keep the normal link if the URL is malformed. */ }
+    if (checkoutOrigin) {
+      let connectionReady = false;
+      const warmCheckoutConnection = () => {
+        if (connectionReady) return;
+        connectionReady = true;
+        const preconnect = document.createElement('link');
+        preconnect.rel = 'preconnect';
+        preconnect.href = checkoutOrigin;
+        document.head.append(preconnect);
+      };
+      document.querySelectorAll('[data-checkout]').forEach(link => {
+        link.addEventListener('pointerenter', warmCheckoutConnection, { once: true, passive: true });
+        link.addEventListener('focus', warmCheckoutConnection, { once: true });
+      });
+      const priceSection = document.getElementById('price');
+      if (priceSection && 'IntersectionObserver' in window) {
+        const checkoutObserver = new IntersectionObserver(entries => {
+          if (!entries.some(entry => entry.isIntersecting)) return;
+          checkoutObserver.disconnect();
+          warmCheckoutConnection();
+        }, { rootMargin: '250px' });
+        checkoutObserver.observe(priceSection);
+      }
+    }
+    const purchaseLink = document.querySelector('.button-purchase[data-checkout]');
+    if (purchaseLink) {
+      const originalHtml = purchaseLink.innerHTML;
+      const originalLabel = purchaseLink.getAttribute('aria-label');
+      const resetPurchaseLink = () => {
+        purchaseLink.classList.remove('is-opening');
+        purchaseLink.innerHTML = originalHtml;
+        purchaseLink.setAttribute('aria-label', originalLabel);
+      };
+      purchaseLink.addEventListener('click', event => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        purchaseLink.classList.add('is-opening');
+        purchaseLink.innerHTML = '決済ページへ移動中… <span aria-hidden="true">↗</span>';
+        purchaseLink.setAttribute('aria-label', '決済ページへ移動中');
+        window.setTimeout(resetPurchaseLink, 8000);
+      });
+      window.addEventListener('pageshow', event => { if (event.persisted) resetPurchaseLink(); });
+    }
+  }
 
+  const brandLink = document.querySelector('.brand[href="#top"]');
   const menuButton = document.getElementById('menuButton');
   const mobileNav = document.getElementById('mobileNav');
   if (menuButton && mobileNav) {
@@ -35,9 +82,15 @@
       document.body.classList.add('menu-open');
     });
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    brandLink?.addEventListener('click', closeMenu);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
     window.addEventListener('resize', () => { if (window.innerWidth > 800 && !mobileNav.hidden) closeMenu(); });
   }
+  brandLink?.addEventListener('click', e => {
+    e.preventDefault();
+    if (window.location.hash !== '#top') window.location.hash = 'top';
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
 
   // ---- Motion: scroll reveals ----
   const INSTANT_DELAY = '-20s'; // negative delay = finished animation, used to show content without replaying it
