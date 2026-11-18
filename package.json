@@ -1,0 +1,22 @@
+{
+  "name": "banner70-lp",
+  "private": true,
+  "type": "module",
+  "description": "BANNER 70 landing page with Stripe Managed Payments delivery (Vercel Functions)",
+  "scripts": {
+    "test": "node --test",
+    "upload-figma": "node scripts/upload-figma-file.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "overrides": {
+    "zod": "^4.6.7"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.41.0",
+    "@vercel/blob": "^2.9.0",
+    "resend": "^6.38.1",
+    "stripe": "^23.1.0"
+  }
+}

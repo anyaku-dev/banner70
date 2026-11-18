@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#faf9f7">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <title>ご購入ありがとうございます | BANNER 70</title>
+  <style>
+    .thanks { min-height: 100vh; display: grid; place-items: center; padding: 40px 20px; background: linear-gradient(122deg,#faf9f7 0%,#f6f3ff 76%,#f0ebff 100%); }
+    .thanks-card { width: min(100%, 620px); background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: clamp(32px, 6vw, 52px); box-shadow: 0 24px 60px rgba(40,25,80,.08); }
+    .thanks-logo { width: 150px; height: auto; object-fit: contain; margin-bottom: 34px; }
+    .thanks-card h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.4; letter-spacing: -.05em; margin: 0 0 18px; white-space: normal; }
+    .thanks-card p { color: #5f5a63; font-size: 14px; margin: 0 0 14px; }
+    .thanks-steps { margin: 26px 0 30px; padding: 20px 22px; border-radius: 14px; background: #f6f3ff; list-style: none; display: grid; gap: 10px; font-size: 13px; line-height: 1.8; }
+    .thanks-steps li { padding-left: 26px; position: relative; }
+    .thanks-steps li::before { content: '✓'; position: absolute; left: 0; color: var(--purple); font-weight: 900; }
+    .thanks-actions { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; }
+  </style>
+</head>
+<body>
+  <main class="thanks">
+    <div class="thanks-card">
+      <img class="thanks-logo" src="assets/logo/logo.png" width="1280" height="248" alt="BANNER 70">
+      <span class="section-index">THANK YOU</span>
+      <h1>ご購入ありがとうございます。</h1>
+      <p>ご入力いただいたメールアドレス宛てに、Figmaデータ（.figファイル）のダウンロードのご案内をお送りしました。</p>
+      <ul class="thanks-steps">
+        <li>メールは通常、数分以内に届きます。</li>
+        <li>届かない場合は、迷惑メールフォルダもご確認ください。</li>
+        <li>ダウンロードリンクの有効期限は30日間、ダウンロードは5回までです。</li>
+      </ul>
+      <div class="thanks-actions">
+        <a class="button button-primary" href="./">トップページへ戻る <span class="button-arrow" aria-hidden="true">↗</span></a>
+        <a class="button button-text" href="https://anyaku.co.jp/contact/">メールが届かない場合はこちら <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
