@@ -4,6 +4,6 @@
  * 未設定の場合はANYAKU公式のお問い合わせページを案内します。
  */
 window.BANNER70_CONFIG = {
-  checkoutUrl: '',
+  checkoutUrl: 'https://buy.stripe.com/eVqcN619v2OQeTleUX2sM00',
   contactUrl: 'https://anyaku.co.jp/contact/'
 };
