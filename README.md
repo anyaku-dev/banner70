@@ -34,6 +34,7 @@ window.BANNER70_CONFIG = {
 | `assets/image-pattern/` | `1A.jpg` / `1B.jpg` ～ `3A.jpg` / `3B.jpg`（比較用6枚、各512×512px） |
 | `assets/movie/` | `movie.mp4`（1920×1080、H.264 / AAC、**約42秒**） |
 | `assets/logo/` | `logo.png`（ユーザー提供のオリジナルロゴ） |
+| `assets/Figma-logo.svg.webp` | Figma案内欄に表示するロゴ |
 | `assets/video-poster.jpg` | 動画から作成した表示前サムネイル |
 | `assets/ogp-banner70.jpg` | OGP・SNS共有用の画像 |
 | `assets/favicon.svg` | ページアイコン |
@@ -46,7 +47,7 @@ window.BANNER70_CONFIG = {
 - 商品一覧：全70種類、用途別フィルター、追加表示、拡大ダイアログ
 - 拡大表示：左右ボタン・左右矢印キー、Escキーで閉じる
 - Before / After：3組、スライダー操作で比較（キーボード操作可）
-- 編集動画：画面に入るとミュートで自動再生。標準コントロールで一時停止・シークができ、音声切り替えボタンも利用可能
+- 編集動画：画面に入るとミュートで自動再生し、終了後はループ再生。標準コントロールで一時停止・シークができ、音声切り替えボタンも利用可能
 - FAQの開閉
 - モバイルナビゲーション
 - 目次へのスクロールリンク／ページ上部へ戻るボタン

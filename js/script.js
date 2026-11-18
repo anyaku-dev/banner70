@@ -15,6 +15,8 @@
   });
   const checkoutStatus = document.getElementById('checkoutStatus');
   if (checkoutStatus && checkoutUrl) checkoutStatus.textContent = '外部の決済ページに移動します。ご購入前に利用条件をご確認ください。';
+  const purchaseDeliveryNote = document.getElementById('purchaseDeliveryNote');
+  if (purchaseDeliveryNote) purchaseDeliveryNote.hidden = !checkoutUrl;
 
   const menuButton = document.getElementById('menuButton');
   const mobileNav = document.getElementById('mobileNav');
