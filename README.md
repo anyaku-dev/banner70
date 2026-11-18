@@ -30,7 +30,7 @@ window.BANNER70_CONFIG = {
 
 | フォルダ | 内容 |
 | --- | --- |
-| `assets/banner-template/` | `banner-template_1.jpg` ～ `banner-template_70.jpg`（70枚、各512×512px） |
+| `assets/banner-template/` | 透かし入り公開見本 `banner-template_sample_1.jpg` ～ `banner-template_sample_70.jpg`（70枚、各512×512px） |
 | `assets/image-pattern/` | `1A.jpg` / `1B.jpg` ～ `3A.jpg` / `3B.jpg`（比較用6枚、各512×512px） |
 | `assets/movie/` | `movie.mp4`（1920×1080、H.264 / AAC、**約42秒**） |
 | `assets/logo/` | `logo.png`（ユーザー提供のオリジナルロゴ） |
@@ -46,7 +46,7 @@ window.BANNER70_CONFIG = {
 - 商品一覧：全70種類、用途別フィルター、追加表示、拡大ダイアログ
 - 拡大表示：左右ボタン・左右矢印キー、Escキーで閉じる
 - Before / After：3組、スライダー操作で比較（キーボード操作可）
-- 編集動画：ブラウザ標準の動画コントロールを使用
+- 編集動画：画面に入るとミュートで自動再生。標準コントロールで一時停止・シークができ、音声切り替えボタンも利用可能
 - FAQの開閉
 - モバイルナビゲーション
 - 目次へのスクロールリンク／ページ上部へ戻るボタン

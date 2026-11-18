@@ -190,7 +190,7 @@
   let lightboxGroup = banners;
   let activeIndex = 0;
   let lastFocus = null;
-  const imgPath = n => `assets/banner-template/banner-template_${n}.jpg`;
+  const imgPath = n => `assets/banner-template/banner-template_sample_${n}.jpg`;
   const prettyNumber = n => String(n).padStart(2, '0');
   const filtered = () => currentCategory === 'all' ? banners : banners.filter(b => b.category === currentCategory);
   const updateDialog = () => {
@@ -288,6 +288,38 @@
     const parent = input.closest('.comparison');
     input.addEventListener('input', () => parent.style.setProperty('--pos', `${input.value}%`));
   });
+  const demoVideo = document.getElementById('demoVideo');
+  const demoMuteToggle = document.getElementById('demoMuteToggle');
+  if (demoVideo && demoMuteToggle) {
+    demoVideo.muted = true;
+    const updateMuteToggle = () => {
+      const soundOn = !demoVideo.muted && demoVideo.volume > 0;
+      demoMuteToggle.textContent = soundOn ? '音をオフにする' : '音をオンにする';
+      demoMuteToggle.setAttribute('aria-pressed', String(soundOn));
+    };
+    demoMuteToggle.addEventListener('click', () => {
+      if (!demoVideo.muted && demoVideo.volume > 0) demoVideo.muted = true;
+      else {
+        if (demoVideo.volume === 0) demoVideo.volume = 1;
+        demoVideo.muted = false;
+      }
+      updateMuteToggle();
+    });
+    demoVideo.addEventListener('volumechange', updateMuteToggle);
+    updateMuteToggle();
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const startVideo = () => { demoVideo.play().catch(() => {}); };
+      if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver(entries => {
+          if (!entries[0].isIntersecting) return;
+          videoObserver.disconnect();
+          startVideo();
+        }, { threshold: 0.5 });
+        videoObserver.observe(demoVideo);
+      } else startVideo();
+    }
+  }
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
     const updateScroll = () => backToTop.classList.toggle('is-visible', window.scrollY > 1000);

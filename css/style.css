@@ -196,6 +196,9 @@ h1 { letter-spacing: -.075em; font-size: clamp(47px, 4.3vw, 72px); line-height: 
 .video-screen video { width: 100%; border-radius: 9px; height: auto; aspect-ratio: 16/9; object-fit: contain; background: #efeff3; }
 .video-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 18px 3px 0; color: #81788f; font: 800 10px/1.3 -apple-system,BlinkMacSystemFont,sans-serif; letter-spacing: .10em; }
 .video-meta>span:first-child { display: flex; align-items: center; gap: 9px; }
+.video-meta-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
+.video-mute-toggle { border: 1px solid #cfc5e5; border-radius: 999px; background: transparent; color: #5a4285; padding: 7px 12px; font: inherit; letter-spacing: .02em; }
+.video-mute-toggle:hover,.video-mute-toggle:focus-visible { background: #e9e1fb; }
 .video-meta-dot { width: 8px; height: 8px; border-radius: 50%; background: #7544ff; display: inline-block; }
 .steps { padding-left: 8px; }
 .step { display: flex; align-items: flex-start; gap: 20px; padding: 25px 0; border-bottom: 1px solid #dcd4ed; }
