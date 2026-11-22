@@ -5,38 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#faf9f7">
+  <meta name="description" content="BANNER 70をご購入いただいた後の、メール確認とFigmaへのテンプレート読み込み手順をご案内します。">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/thanks.css">
   <title>ご購入ありがとうございます | BANNER 70</title>
-  <style>
-    .thanks { min-height: 100vh; display: grid; place-items: center; padding: 40px 20px; background: linear-gradient(122deg,#faf9f7 0%,#f6f3ff 76%,#f0ebff 100%); }
-    .thanks-card { width: min(100%, 620px); background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: clamp(32px, 6vw, 52px); box-shadow: 0 24px 60px rgba(40,25,80,.08); }
-    .thanks-logo { width: 150px; height: auto; object-fit: contain; margin-bottom: 34px; }
-    .thanks-card h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.4; letter-spacing: -.05em; margin: 0 0 18px; white-space: normal; }
-    .thanks-card p { color: #5f5a63; font-size: 14px; margin: 0 0 14px; }
-    .thanks-steps { margin: 26px 0 30px; padding: 20px 22px; border-radius: 14px; background: #f6f3ff; list-style: none; display: grid; gap: 10px; font-size: 13px; line-height: 1.8; }
-    .thanks-steps li { padding-left: 26px; position: relative; }
-    .thanks-steps li::before { content: '✓'; position: absolute; left: 0; color: var(--purple); font-weight: 900; }
-    .thanks-actions { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; }
-  </style>
 </head>
 <body>
-  <main class="thanks">
-    <div class="thanks-card">
-      <img class="thanks-logo" src="assets/logo/logo.png" width="1280" height="248" alt="BANNER 70">
-      <span class="section-index">THANK YOU</span>
-      <h1>ご購入ありがとうございます。</h1>
-      <p>ご入力いただいたメールアドレス宛てに、Figmaデータ（.figファイル）のダウンロードのご案内をお送りしました。</p>
-      <ul class="thanks-steps">
-        <li>メールは通常、数分以内に届きます。</li>
-        <li>届かない場合は、迷惑メールフォルダもご確認ください。</li>
-        <li>ダウンロードリンクの有効期限は30日間、ダウンロードは5回までです。</li>
-      </ul>
-      <div class="thanks-actions">
-        <a class="button button-primary" href="./">トップページへ戻る <span class="button-arrow" aria-hidden="true">↗</span></a>
-        <a class="button button-text" href="https://anyaku.co.jp/contact/">メールが届かない場合はこちら <span aria-hidden="true">↗</span></a>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="./" aria-label="BANNER 70 トップへ"><img src="assets/logo/logo.png" width="1280" height="248" alt="BANNER 70"></a><a class="thanks-home-link" href="./">トップページへ戻る <span aria-hidden="true">↗</span></a></div></header>
+
+  <main id="main">
+    <section class="thanks-hero" aria-labelledby="thanks-title"><div class="container thanks-hero-inner">
+      <div class="thanks-intro">
+        <span class="section-index">THANK YOU FOR YOUR PURCHASE</span>
+        <h1 id="thanks-title">ご購入ありがとう<br>ございます。</h1>
+        <p class="thanks-lead">BANNER 70から、デザインテンプレートファイル（<strong>.fig</strong>）のダウンロードリンクをメールでお送りします。</p>
+        <div class="thanks-mail-notice"><span class="thanks-mail-icon" aria-hidden="true">✉</span><div><strong>まずはメールをご確認ください</strong><p>ご購入時のメールアドレスの受信箱をご確認ください。届かない場合は、迷惑メールフォルダもご確認ください。</p></div></div>
+        <p class="thanks-timing">メールの到着まで数分かかる場合があります。ダウンロードリンクの有効期限は30日間、ダウンロードは5回までです。</p>
       </div>
-    </div>
+
+      <div class="thanks-flow" aria-label="メールを開き、ファイルをダウンロードしてFigmaに読み込むまでの流れ">
+        <div class="thanks-flow-head"><span>DOWNLOAD GUIDE</span><strong>受信から編集まで</strong></div>
+        <div class="thanks-flow-grid">
+          <div class="flow-card flow-mail"><span class="flow-number">01 / メールを開く</span><div class="flow-illustration flow-envelope" aria-hidden="true"><span class="envelope-back"></span><span class="envelope-letter"><span></span><span></span></span><span class="envelope-front"></span><span class="envelope-flap"></span></div><p>ダウンロード案内が届きます</p></div>
+          <div class="flow-card flow-download"><span class="flow-number">02 / ダウンロード</span><div class="flow-illustration flow-file" aria-hidden="true"><span class="file-arrow">↓</span><span class="file-sheet"><b>.fig</b></span><span class="file-tray"></span></div><p>ファイルをPCに保存</p></div>
+          <div class="flow-card flow-import"><span class="flow-number">03 / Figmaに読み込む</span><div class="flow-illustration flow-browser" aria-hidden="true"><span class="browser-bar"><i></i><i></i><i></i><b>figma.com/files</b></span><span class="browser-drop"><span class="browser-chip">.fig</span><span>ここにドロップ</span></span></div><p>ファイル一覧へドラッグ＆ドロップ</p></div>
+          <div class="flow-card flow-open"><span class="flow-number">04 / 編集スタート</span><div class="flow-illustration flow-result" aria-hidden="true"><span class="result-toolbar"><img src="assets/Figma-logo.svg.webp" alt="" width="13" height="20"><i></i><i></i></span><span class="result-canvas"><img src="assets/banner-template/banner-template_sample_1.jpg" alt="" width="300" height="300"></span></div><p>バナーを開いて編集できます</p></div>
+        </div>
+        <span class="thanks-flow-caption">メール → ダウンロード → Figmaへ読み込み → 編集</span>
+      </div>
+    </div></section>
+
+    <section class="thanks-guide" aria-labelledby="guide-title"><div class="container thanks-guide-inner">
+      <div class="thanks-guide-heading"><span class="section-index">GET STARTED IN FIGMA</span><h2 id="guide-title">ダウンロード後の流れ</h2><p>Figmaのアカウントを用意し、ダウンロードした <code>.fig</code> ファイルを読み込みます。</p></div>
+
+      <section class="thanks-setup" aria-labelledby="setup-title"><span class="thanks-step-number">01</span><div class="thanks-setup-copy"><h3 id="setup-title">Figmaのアカウントを作成する</h3><p>まだアカウントをお持ちでない場合は、Figmaに登録してください。PCのブラウザ上でも編集できます。デスクトップアプリを使う場合は、別途ダウンロードしてください。</p></div><div class="thanks-setup-links"><a href="https://www.figma.com/signup" target="_blank" rel="noopener noreferrer">Figmaに登録 <span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開く）</span></a><a href="https://www.figma.com/ja-jp/downloads/" target="_blank" rel="noopener noreferrer">PCアプリをダウンロード <span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開く）</span></a></div></section>
+
+      <div class="thanks-import-heading"><span class="thanks-step-number">02</span><div><h3>Figmaで <code>.fig</code> ファイルを開く</h3><p>どちらかの方法で読み込めます。まずはドラッグ＆ドロップがおすすめです。</p></div><a href="https://www.figma.com/files/" target="_blank" rel="noopener noreferrer">Figmaのファイル一覧を開く <span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開く）</span></a></div>
+
+      <div class="thanks-methods">
+        <section class="thanks-method thanks-method-featured" aria-labelledby="method-drag-title"><div class="thanks-method-top"><span>方法 01</span><span class="thanks-recommend">おすすめ</span></div><h4 id="method-drag-title">ドラッグ＆ドロップ</h4><ol><li>PCのFigmaアプリ、またはブラウザで<a href="https://www.figma.com/files/" target="_blank" rel="noopener noreferrer">Figmaのファイル一覧<span class="sr-only">（新しいタブで開く）</span></a>を開く。</li><li>PCにダウンロードした <code>.fig</code> ファイルを探す。</li><li><strong>ファイル一覧の画面に <code>.fig</code> ファイルをドラッグ＆ドロップする。</strong></li><li>読み込みが終わったら、ファイルをダブルクリックして開く。</li></ol></section>
+        <section class="thanks-method" aria-labelledby="method-menu-title"><div class="thanks-method-top"><span>方法 02</span></div><h4 id="method-menu-title">メニューから読み込む</h4><ol><li><a href="https://www.figma.com/files/" target="_blank" rel="noopener noreferrer">Figmaのファイル一覧<span class="sr-only">（新しいタブで開く）</span></a>を開く。</li><li>右上の「作成（Create new）」メニューをクリック。</li><li>「インポート（Import）」を選択。</li><li>「コンピューターからインポート」を選択。</li><li><code>.fig</code> ファイルを選んで「開く」をクリック。読み込みが終わったらファイルを開く。</li></ol></section>
+      </div>
+
+      <div class="thanks-help"><div><strong>メールが届かない・ファイルを開けない場合</strong><p>迷惑メールフォルダも確認のうえ、解決しない場合はご購入時のメールアドレスを添えてお問い合わせください。</p></div><a href="mailto:contact@anyaku.co.jp?subject=BANNER%2070%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ <span aria-hidden="true">↗</span></a></div>
+    </div></section>
   </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><div><img class="footer-logo" src="assets/logo/logo.png" alt="BANNER 70" width="1280" height="248"><p>プロのデザインを、もっと身近に。<br>株式会社ANYAKUによるデザインテンプレートコレクション。</p></div><div class="footer-links"><a href="./">トップページ</a><a href="terms.html">BANNER 70 利用規約</a><a href="refund-policy.html">返品・キャンセル・返金について</a><a href="legal.html">特定商取引法に基づく表記</a></div></div><div class="container footer-bottom"><small>© 2026 ANYAKU Co., Ltd. All Rights Reserved.</small></div></footer>
 </body>
 </html>

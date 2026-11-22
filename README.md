@@ -126,7 +126,7 @@ window.BANNER70_CONFIG = {
 3. **Resend**：送信元ドメイン（例：anyaku.co.jp）を Resend に登録し、表示される DNS レコードを追加して認証します。API キーを発行します。
 4. **Stripe**：
    - 商品「BANNER 70」を作成します（¥49,900・一回払い・**税込（inclusive）**、デジタル商品の税コードを設定）。
-   - 決済用リンクを作成し、「Managed Payments を有効にする」にチェックを入れます。支払い後の移動先を `https://（公開ドメイン）/thanks.html` に設定します。
+   - 決済用リンクを作成し、「Managed Payments を有効にする」にチェックを入れます。決済リンクの「支払い後」→「確認ページ」で、自分のサイトへリダイレクトする設定を選び、移動先を `https://banner70.an-yaku.com/thanks.html` に設定します。末尾は `/thanks/` ではなく `/thanks.html` です。
    - Webhook のエンドポイントを `https://（公開ドメイン）/api/stripe-webhook` で追加します。受け取るイベントは `checkout.session.completed`、`checkout.session.async_payment_succeeded`、`charge.refunded` の3つです。
 5. **環境変数**：`.env.example` を参考に、Vercel の Environment Variables に `STRIPE_SECRET_KEY`、`STRIPE_WEBHOOK_SECRET`、`STRIPE_PRICE_ID`、`SITE_URL`、`RESEND_API_KEY`、`MAIL_FROM` などを設定し、再デプロイします。
 6. **テスト**：テストカードで購入し、メールが届くこと、ダウンロードできること、Stripe ダッシュボードの Webhook 画面で通知が成功（200）になっていることを確認します。
