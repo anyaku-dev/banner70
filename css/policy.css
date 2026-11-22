@@ -15,11 +15,10 @@
 .policy-section p, .policy-section li { color: var(--ink-soft); font-size: 15px; line-height: 2; }
 .policy-section p { margin-bottom: 16px; }
 .policy-section p:last-child { margin-bottom: 0; }
-.policy-section ul { margin: 0 0 22px; padding-left: 1.6em; }
+.policy-section ul, .policy-section ol { margin: 0 0 22px; padding-left: 1.6em; }
 .policy-section li + li { margin-top: 6px; }
 .policy-section a { color: var(--purple); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 .policy-section a:hover { color: var(--purple-dark); }
-.policy-section .policy-pending { color: #8a818e; font-size: 13px; }
 .policy-seller { margin: 42px 0 0; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; font-weight: 800; }
 
 @media (max-width: 600px) {
