@@ -36,7 +36,7 @@ window.BANNER70_CONFIG = {
 | `assets/logo/` | `logo.png`（ユーザー提供のオリジナルロゴ） |
 | `assets/Figma-logo.svg.webp` | Figma案内欄に表示するロゴ |
 | `assets/video-poster.jpg` | 動画から作成した表示前サムネイル |
-| `assets/ogp-banner70.jpg` | OGP・SNS共有用の画像 |
+| `assets/banner70-image.jpg` | OGP・SNS共有用の画像（1024×1024px、ユーザー提供） |
 | `assets/favicon.svg` | ページアイコン |
 
 動画はご提供いただいた約42秒のファイルを、カットせず収録しています。
