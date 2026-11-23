@@ -1,11 +1,11 @@
 // Uploads the BANNER 70 .fig file to a private Vercel Blob store.
-// Usage: BLOB_READ_WRITE_TOKEN=... npm run upload-figma -- ./BANNER70.fig
+// Usage: BLOB_READ_WRITE_TOKEN=... npm run upload-figma -- './BANNER 70.fig'
 import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import { put } from '@vercel/blob';
 
 const filePath = process.argv[2];
-const pathname = process.env.FIGMA_FILE_PATHNAME || 'banner70/BANNER70.fig';
+const pathname = process.env.FIGMA_FILE_PATHNAME || 'BANNER 70.fig';
 
 if (!filePath) {
   console.error('Usage: npm run upload-figma -- <path-to-.fig-file>');

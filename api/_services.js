@@ -41,7 +41,7 @@ let downloadService;
 
 export const getStripe = () => (stripeClient ??= new Stripe(requireEnv('STRIPE_SECRET_KEY')));
 const getStore = () => (store ??= createRedisStore(Redis.fromEnv()));
-const getFiles = () => createBlobFiles(process.env.FIGMA_FILE_PATHNAME || 'banner70/BANNER70.fig');
+const getFiles = () => createBlobFiles(process.env.FIGMA_FILE_PATHNAME || 'BANNER 70.fig');
 
 export const getWebhookService = () => {
   if (webhookService) return webhookService;

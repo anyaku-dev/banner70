@@ -1,30 +1,30 @@
-# BANNER 70 — LP 納品ファイル
+# BANNER 70 — 販売サイト
 
-株式会社ANYAKU「BANNER 70」販売用ランディングページの一式です。
-LP本体は HTML / CSS / JavaScript のみの静的サイトです。決済後にFigmaデータを自動で届けるため、Vercel Functions（`api/`）を追加しています（詳しくは「8. 決済後の自動納品」を参照してください）。
+株式会社ANYAKU「BANNER 70」の販売サイトです。GitHub の `main` への反映後、Vercel から `https://banner70.an-yaku.com/` で公開されます。
+LP本体は HTML / CSS / JavaScript の静的サイトです。決済後のFigmaデータの自動送付には Vercel Functions（`api/`）を使用します（詳しくは「8. 決済後の自動納品」を参照してください）。
 
 ## 1. サイトを開く
 
 - `index.html` がトップページ、`thanks.html` が購入完了ページです。
-- 公開先は Vercel を想定しています。このフォルダを Vercel のプロジェクトとしてデプロイしてください（フレームワークの設定は「Other」、ビルドコマンドは不要です）。
+- 公開先は Vercel です。GitHub の `main` へプッシュすると自動デプロイされます（フレームワークの設定は「Other」、ビルドコマンドは不要です）。
 - LPだけを確認する場合は、ローカルのWebサーバーで `index.html` を開いてください。HTMLを直接ダブルクリックした場合、ブラウザによって動画等の挙動が異なる場合があります。
 
-## 2. 最重要：購入ボタンのリンク先を設定する
+## 2. 購入ボタンと価格
 
-現在は決済ページのURLが未提供のため、**すべての購入ボタンは株式会社ANYAKUの公式お問い合わせページ**に接続しています。
-未設定の状態で、「決済できる」と誤認させないようボタンの文字も「購入について問い合わせる」にしています。
+購入ボタンは `js/config.js` に設定した Stripe の本番決済リンクに接続しています。
 
-`js/config.js` を開き、次の `checkoutUrl` に、Stripe の決済用リンク（Payment Link）のURLを入力してください。
+決済リンクを変更するときは、`js/config.js` の `checkoutUrl` を新しい Stripe の決済用リンク（Payment Link）のURLに差し替えてください。現在の設定は次のとおりです。
 
 ```js
 window.BANNER70_CONFIG = {
-  checkoutUrl: 'https://buy.stripe.com/...',
+  checkoutUrl: 'https://buy.stripe.com/eVqcN619v2OQeTleUX2sM00',
   contactUrl: 'https://anyaku.co.jp/contact/'
 };
 ```
 
-`checkoutUrl` が空欄の場合は公式お問い合わせへ、`https://` から始まるURLが入力されている場合はその購入ページへ遷移します。
-リンク設定と同時に購入ボタンの文言も切り替わります。
+`checkoutUrl` が空欄の場合は公式お問い合わせへ、`https://` から始まるURLが入力されている場合は決済ページへ遷移します。リンク設定に合わせて購入ボタンの文言も切り替わります。
+
+発売記念特別価格は49,900円（税込）、適用期間は2026年11月20日〜12月31日です。キャンペーン終了後の販売予定価格は99,800円（税込）です。期間終了時には、Stripe の決済リンクとサイトの価格表示を同時に更新してください。
 
 ## 3. 収録素材
 
@@ -62,17 +62,14 @@ window.BANNER70_CONFIG = {
 - バナーの並び・用途別フィルター設定は `js/script.js` の `categories` で変更できます。
 - 表示する画像ファイルは `assets/` 配下に格納しています。ファイル名を変更する場合はHTML/JSの参照先も変更してください。
 
-## 6. 公開前チェックリスト（重要）
+## 6. 公開後の確認事項
 
-- [ ] 「8. 決済後の自動納品」の設定を行い、サンドボックス（テスト環境）で、支払い → メール受信 → ダウンロードまでを通しでテストする
-- [ ] 購入者に提供する**編集可能なFigmaデータ（.fig）**を用意し、Vercel Blob にアップロードする
-- [ ] 商品ライセンス・利用規約を確定する（商用利用・受託案件・複製・第三者との共有・禁止事項）
+- [ ] 本番モードの決済リンク・価格ID・Webhook署名シークレットが同じStripeアカウントのものであることを確認する
+- [ ] 本番の購入完了 → Resendからのメール受信 → Blobの `.fig` ダウンロードまで確認する（テストカードはサンドボックスでのみ使用）
+- [ ] Vercel の `FIGMA_FILE_PATHNAME` が Private Blob 内の `BANNER 70.fig` と一致することを確認する
 - [ ] **70種類の画像内の写真、ロゴ、人物、フォント、AI生成素材**を確認し、テンプレート販売・再配布が許可されることを確認する
-- [ ] バナー内の架空／実在の社名・商品名・受賞・数値・日付等が購入後にそのまま使われないよう購入者へ案内する
-- [ ] 「特定商取引法に基づく表記」および返品／返金条件、提供方法等を適切に提示する
-- [ ] 49,900円を「発売記念価格」と表記する場合の価格表示・キャンペーン条件を確認する（本LPは未実績の通常価格との二重価格表示をしていません）
-- [ ] 実際の公開ドメインが決まったら `index.html` の `og:image` を絶対URLに変更し、必要なら `canonical` を追加する
-- [ ] 公開するサーバー上で、スマホ・PCの表示、画像70枚、動画、リンク先を最終確認する
+- [ ] キャンペーン終了時に予定価格99,800円（税込）へ切り替え、価格に関するLP・特商法・Stripeの表示を揃える
+- [ ] スマホ・PCで画像70枚、動画、購入・利用規約・返品・特商法のリンクを確認する
 
 ## 7. デザイン上の補足
 
@@ -114,23 +111,23 @@ window.BANNER70_CONFIG = {
 | `thanks.html` | 決済完了後に表示するページ |
 | `scripts/upload-figma-file.mjs` | .fig ファイルを Vercel Blob にアップロードする |
 
-### 設定手順（最初はサンドボックス／テスト環境で）
+### 再設定・移行時の手順
 
 1. **Vercel**：このフォルダを Vercel にデプロイします。プロジェクトの Storage から次の2つを追加します。対応する環境変数は自動で設定されます。
    - **Blob**（アクセスは Private）→ `BLOB_READ_WRITE_TOKEN`
    - **Upstash Redis**（Marketplace から追加）→ `KV_REST_API_URL` / `KV_REST_API_TOKEN`
-2. **.fig ファイルのアップロード**：`npm install` のあと、`vercel env pull .env.local` で取得した `BLOB_READ_WRITE_TOKEN` を使って、次を実行します。
+2. **.fig ファイルのアップロード**：Private Blob に `BANNER 70.fig` を保存します。再アップロードする場合は `npm install` のあと、Vercel の `BLOB_READ_WRITE_TOKEN` を使って次を実行します。
    ```sh
-   BLOB_READ_WRITE_TOKEN=... npm run upload-figma -- ./BANNER70.fig
+   BLOB_READ_WRITE_TOKEN=... npm run upload-figma -- './BANNER 70.fig'
    ```
-3. **Resend**：送信元ドメイン（例：anyaku.co.jp）を Resend に登録し、表示される DNS レコードを追加して認証します。API キーを発行します。
+3. **Resend**：認証済みの `an-yaku.com` ドメインから `BANNER 70 <no-reply@an-yaku.com>` で送ります。API キーと `MAIL_FROM` を Vercel に設定します。
 4. **Stripe**：
    - 商品「BANNER 70」を作成します（¥49,900・一回払い・**税込（inclusive）**、デジタル商品の税コードを設定）。
    - 決済用リンクを作成し、「Managed Payments を有効にする」にチェックを入れます。決済リンクの「支払い後」→「確認ページ」で、自分のサイトへリダイレクトする設定を選び、移動先を `https://banner70.an-yaku.com/thanks.html` に設定します。`/thanks/` が既に設定されている場合も、同じページへ転送されます。
-   - Webhook のエンドポイントを `https://（公開ドメイン）/api/stripe-webhook` で追加します。受け取るイベントは `checkout.session.completed`、`checkout.session.async_payment_succeeded`、`charge.refunded` の3つです。
+   - Webhook のエンドポイントは `https://banner70.an-yaku.com/api/stripe-webhook` です。受け取るイベントは `checkout.session.completed`、`checkout.session.async_payment_succeeded`、`charge.refunded` の3つです。
 5. **環境変数**：`.env.example` を参考に、Vercel の Environment Variables に `STRIPE_SECRET_KEY`、`STRIPE_WEBHOOK_SECRET`、`STRIPE_PRICE_ID`、`SITE_URL`、`RESEND_API_KEY`、`MAIL_FROM` などを設定し、再デプロイします。
-6. **テスト**：テストカードで購入し、メールが届くこと、ダウンロードできること、Stripe ダッシュボードの Webhook 画面で通知が成功（200）になっていることを確認します。
-7. **`js/config.js` の `checkoutUrl`** に決済用リンクの URL を設定します（本番では本番用のリンク）。
+6. **テスト**：サンドボックスではテストカード、本番では0円注文用の限定クーポンなどを使って、Webhookの成功（200）、メール受信、ダウンロードを確認します。本番リンクでテストカードは使えません。
+7. **購入リンク**：`js/config.js` の `checkoutUrl` は本番用のリンクを設定済みです。Stripe 側でリンクを作り直した場合だけ差し替えます。
 
 ### 運用メモ
 
